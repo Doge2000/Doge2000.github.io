@@ -3,11 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>Jade Chen - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
+    <header class="top-header">
+        <div class="container">
+            <h1>Jade Chen</h1>
+            <p class="tagline">Aerospace Student @UT Austin</p>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
+
+    <section id="about" class="container">
+        <div class="about-content">
+            <img src="assets/Profile.jpg" alt="Jade Chen" class="profile-img">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I'm a passionate aerospace engineering student at the University of Texas at Austin, and I enjoy working on projects that combine my interests in software development and aerospace systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Rocket Flight Simulator</h3>
+                <p>Validated multi-stage rocket flight dynamics simulation with a live telemetry interface and visualization capabilities.</p>
+                <div class="project-tags">
+                    <span class="tag">C++</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">HTML</span>
+                    <span class="tag">Three.js</span>
+                </div>
+                <a href="https://github.com/Doge2000/flight_sim" class="btn-project">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>LSTM Stock Predictor</h3>
+                <p>LSTM neural network for stock price prediction using historical data.</p>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Pandas</span>
+                </div>
+                <a href="https://github.com/Doge2000/StockMLProject" class="btn-project">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Asteroids</h3>
+                <p>Rebuilt the classic Asteroids game using Java.</p>
+                <div class="project-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">OOP</span>
+                </div>
+                <a href="https://github.com/Doge2000/AsteroidsGame" class="btn-project">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>WebCrawler</h3>
+                <p>A web crawler built with Java and Gradle. </p>
+                <div class="project-tags">
+                    <span class="tag">Java</span>
+                    <span class="tag">Gradle</span>
+                </div>
+                <a href="https://github.com/Doge2000/WebCrawlerProject" class="btn-project">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Get In Touch</h2>
+        <p>Have a question or just want to say hello? Feel free to reach out!</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p><a href="mailto:jadelchen01@gmail.com">
+                    <img src="assets/emailico.png" alt="Email Icon" class="contact-icon">
+                </a></p>
+            </div>
+            <div class="contact-item">
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/Doge2000" target="_blank">
+                     <img src="assets/githubico.png" alt="GitHub Icon" class="contact-icon"> 
+                </a></p>
+            </div>
+            <div class="contact-item">
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/jade-chen-78b28b354/" target="_blank">
+                    <img src="assets/linkedinico.png" alt="LinkedIn Icon" class="contact-icon"> 
+                </a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <p>&copy; 2026 Jade Chen. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/Doge2000" aria-label="GitHub" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/jade-chen-78b28b354/" aria-label="LinkedIn" target="_blank">LinkedIn</a>
+        </div>
+    </footer>
 </body>
+</html>
