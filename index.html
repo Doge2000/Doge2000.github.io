@@ -3,108 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jade Chen - Portfolio</title>
+    <title>Jade Chen - Aerospace Engineering & Software Developer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="top-header">
-        <div class="container">
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
             <h1>Jade Chen</h1>
-            <p class="tagline">Aerospace Student @UT Austin</p>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+            <p class="tagline">Aerospace Engineering Student @ UT Austin</p>
+            <nav class="main-nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects-contact" class="nav-link">Projects & Contact</a>
             </nav>
         </div>
     </header>
 
-    <section id="about" class="container">
-        <div class="about-content">
-            <img src="assets/Profile.jpg" alt="Jade Chen" class="profile-img">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>I'm a passionate aerospace engineering student at the University of Texas at Austin, and I enjoy working on projects that combine my interests in software development and aerospace systems.</p>
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="assets/Profile.jpg" alt="Jade Chen" class="profile-img">
+                </div>
+                <div class="about-text">
+                    <h2>About Me</h2>
+                    <p>I'm a passionate aerospace engineering student at the University of Texas at Austin with a strong focus on software development. I enjoy building projects that bridge the gap between aerospace systems and modern software solutions, working on everything from flight simulations to machine learning applications.</p>
+                    <div class="skills-preview">
+                        <span class="skill-tag">C++</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">CAD Software</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="container">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Rocket Flight Simulator</h3>
-                <p>Validated multi-stage rocket flight dynamics simulation with a live telemetry interface and visualization capabilities.</p>
-                <div class="project-tags">
-                    <span class="tag">C++</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">HTML</span>
-                    <span class="tag">Three.js</span>
+    <!-- Projects & Contact Tabbed Section -->
+    <section id="projects-contact" class="section tabs-section">
+        <div class="container">
+            <div class="tabs-header">
+                <h2>Explore My Work</h2>
+                <div class="tabs" role="tablist">
+                    <button class="tab-btn active" id="projects-tab" data-tab="projects" role="tab" aria-controls="projects-panel" aria-selected="true">Projects</button>
+                    <button class="tab-btn" id="contact-tab" data-tab="contact" role="tab" aria-controls="contact-panel" aria-selected="false">Contact</button>
                 </div>
-                <a href="https://github.com/Doge2000/flight_sim" class="btn-project">View Project</a>
             </div>
-            <div class="project-card">
-                <h3>LSTM Stock Predictor</h3>
-                <p>LSTM neural network for stock price prediction using historical data.</p>
-                <div class="project-tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">PyTorch</span>
-                    <span class="tag">Pandas</span>
+
+            <div class="tabs-content">
+                <!-- Projects Tab -->
+                <div class="tab-panel active" id="projects-panel" role="tabpanel" aria-labelledby="projects-tab">
+                    <div class="projects-grid">
+                        <!-- Project Card 1 -->
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>Rocket Flight Simulator</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">C++</span>
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">Three.js</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Validated multi-stage rocket flight dynamics simulation with live telemetry interface and 3D visualization capabilities. Implemented numerical integration methods for trajectory prediction and real-time data visualization.
+                            </p>
+                            <a href="https://github.com/Doge2000/flight_sim" class="project-link" target="_blank">
+                                View on GitHub
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>LSTM Stock Predictor</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">PyTorch</span>
+                                    <span class="tech-tag">Pandas</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                LSTM neural network for stock price prediction using historical market data. Features include data preprocessing, model training with backtesting, and visualization of prediction accuracy.
+                            </p>
+                            <a href="https://github.com/Doge2000/StockMLProject" class="project-link" target="_blank">
+                                View on GitHub
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>Asteroids Game</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Object-Oriented Programming</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                Rebuilt the classic Asteroids arcade game using Java with OOP principles. Features include collision detection and particle effects.
+                            </p>
+                            <a href="https://github.com/Doge2000/AsteroidsGame" class="project-link" target="_blank">
+                                View on GitHub
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div class="project-card">
+                            <div class="project-header">
+                                <h3>Web Crawler</h3>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Gradle</span>
+                                    <span class="tech-tag">Multi-threading</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                A multi-threaded web crawler built with Java and Gradle. Implements breadth-first search algorithms, URL filtering, data extraction, and storage capabilities for large-scale web scraping tasks.
+                            </p>
+                            <a href="https://github.com/Doge2000/WebCrawlerProject" class="project-link" target="_blank">
+                                View on GitHub
+                                <span class="arrow">→</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/Doge2000/StockMLProject" class="btn-project">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>Asteroids</h3>
-                <p>Rebuilt the classic Asteroids game using Java.</p>
-                <div class="project-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">OOP</span>
+
+                <!-- Contact Tab -->
+                <div class="tab-panel" id="contact-panel" role="tabpanel" aria-labelledby="contact-tab" hidden>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <img src="assets/emailico.png" alt="Email">
+                                </div>
+                                <h3>Email</h3>
+                                <p><a href="mailto:jadelchen01@gmail.com" class="contact-link">jadelchen01@gmail.com</a></p>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <img src="assets/githubico.png" alt="GitHub">
+                                </div>
+                                <h3>GitHub</h3>
+                                <p><a href="https://github.com/Doge2000" class="contact-link" target="_blank">Doge2000</a></p>
+                            </div>
+
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <img src="assets/linkedinico.png" alt="LinkedIn">
+                                </div>
+                                <h3>LinkedIn</h3>
+                                <p><a href="https://www.linkedin.com/in/jade-chen-78b28b354/" class="contact-link" target="_blank">jade-chen-78b28b354</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-message">
+                            <p>I'm always excited to discuss aerospace projects, software collaborations, or just connect with fellow enthusiasts. Feel free to reach out through any of the channels above!</p>
+                        </div>
+                    </div>
                 </div>
-                <a href="https://github.com/Doge2000/AsteroidsGame" class="btn-project">View Project</a>
-            </div>
-            <div class="project-card">
-                <h3>WebCrawler</h3>
-                <p>A web crawler built with Java and Gradle. </p>
-                <div class="project-tags">
-                    <span class="tag">Java</span>
-                    <span class="tag">Gradle</span>
-                </div>
-                <a href="https://github.com/Doge2000/WebCrawlerProject" class="btn-project">View Project</a>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container">
-        <h2>Get In Touch</h2>
-        <p>Have a question or just want to say hello? Feel free to reach out!</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <h3>Email</h3>
-                <p><a href="mailto:jadelchen01@gmail.com">
-                    <img src="assets/emailico.png" alt="Email Icon" class="contact-icon">
-                </a></p>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Jade Chen. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="https://github.com/Doge2000" aria-label="GitHub" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/jade-chen-78b28b354/" aria-label="LinkedIn" target="_blank">LinkedIn</a>
             </div>
-            <div class="contact-item">
-                <h3>GitHub</h3>
-                <p><a href="https://github.com/Doge2000" target="_blank">
-                     <img src="assets/githubico.png" alt="GitHub Icon" class="contact-icon"> 
-                </a></p>
-            </div>
-            <div class="contact-item">
-                <h3>LinkedIn</h3>
-                <p><a href="https://www.linkedin.com/in/jade-chen-78b28b354/" target="_blank">
-                    <img src="assets/linkedinico.png" alt="LinkedIn Icon" class="contact-icon"> 
-                </a></p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="container">
-        <p>&copy; 2026 Jade Chen. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://github.com/Doge2000" aria-label="GitHub" target="_blank">GitHub</a>
-            <a href="https://www.linkedin.com/in/jade-chen-78b28b354/" aria-label="LinkedIn" target="_blank">LinkedIn</a>
         </div>
     </footer>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all tabs and panels
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        btn.setAttribute('aria-selected', 'false');
+                    });
+                    tabPanels.forEach(panel => {
+                        panel.classList.remove('active');
+                        panel.hidden = true;
+                    });
+
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    button.setAttribute('aria-selected', 'true');
+
+                    // Show corresponding panel
+                    const tabId = button.getAttribute('data-tab') + '-panel';
+                    const targetPanel = document.getElementById(tabId);
+                    targetPanel.classList.add('active');
+                    targetPanel.hidden = false;
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Add subtle animation on scroll
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.section, .project-card, .contact-item').forEach(el => {
+                el.classList.add('animate-in');
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
