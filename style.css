@@ -640,15 +640,9 @@ footer {
 
 .experience-grid {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 2.5rem;
     margin-top: 2rem;
-}
-
-/* Make experience cards similar size to project cards */
-@media (min-width: 768px) {
-    .experience-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
 }
 
 /* Enhanced responsive design */
