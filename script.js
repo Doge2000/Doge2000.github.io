@@ -146,8 +146,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Create particle background
     function createParticles() {
-        const particlesContainer = document.getElementById('particles-container');
-        if (!particlesContainer) return;
+        let particlesContainer = document.getElementById('particles-container');
+        if (!particlesContainer) {
+            particlesContainer = document.createElement('div');
+            particlesContainer.id = 'particles-container';
+            document.body.appendChild(particlesContainer);
+        }
 
         // Create particles
         for (let i = 0; i < 30; i++) {

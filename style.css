@@ -256,7 +256,7 @@ section h2::after {
 /* Projects section styling */
 .hover-effect-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
     gap: 2rem;
     margin-top: 2.5rem;
 }
@@ -377,7 +377,8 @@ section h2::after {
     text-align: center;
 }
 
-.project h3 {
+.project h3,
+.project-card h3 {
     color: #ffffff;
     margin-bottom: 1.25rem;
     font-size: 1.75rem;
@@ -387,7 +388,8 @@ section h2::after {
     justify-content: center;
 }
 
-.project h3::before {
+.project h3::before,
+.project-card h3::before {
     content: '';
     width: 8px;
     height: 8px;
@@ -684,7 +686,8 @@ footer {
         padding: 1.75rem;
     }
 
-    .project h3 {
+    .project h3,
+    .project-card h3 {
         font-size: 1.5rem;
     }
 
@@ -739,7 +742,8 @@ footer {
         padding: 1.5rem;
     }
 
-    .project h3 {
+    .project h3,
+    .project-card h3 {
         font-size: 1.25rem;
     }
 
