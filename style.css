@@ -326,6 +326,106 @@ section h2::after {
     border: 1px solid rgba(0, 187, 255, 0.2);
 }
 
+/* Experience layout styles */
+.experience-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.experience-logo {
+    flex-shrink: 0;
+}
+
+.experience-details {
+    flex: 1;
+}
+
+/* Company logo styles */
+.company-logo {
+    max-height: 48px;
+    max-width: 140px;
+    vertical-align: middle;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+/* Specific logo styles */
+.txflight-logo {
+    max-height: 48px;
+    max-width: 140px;
+}
+
+.aplus-logo {
+    background-color: white;
+    padding: 6px;
+    border-radius: 8px;
+    max-height: 48px;
+    max-width: 140px;
+}
+
+.nasa-logo {
+    max-height: 48px;
+    max-width: 140px;
+}
+
+/* Logo hover effects */
+.experience-logo:hover .company-logo {
+    filter: brightness(1.2);
+    transform: scale(1.05);
+}
+
+/* Experience details styling */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.experience-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: #00bbff;
+    font-weight: 500;
+}
+
+.company-name {
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.experience-description {
+    margin: 1rem 0;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.experience-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.experience-tech span {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(0, 187, 255, 0.2);
+}
+
 .project:hover,
 .project-card:hover {
     transform: translateY(-8px);
