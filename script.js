@@ -10,6 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Dark/Light mode toggle
+    const modeToggle = document.getElementById('mode-toggle');
+    // Check for saved mode preference or default to dark
+    const currentMode = localStorage.getItem('mode') || 'dark';
+    document.body.classList.add(currentMode + '-mode');
+    // Update the button icon based on mode
+    modeToggle.textContent = currentMode === 'dark' ? '🌓' : '☀️';
+
+    // Add click event listener
+    modeToggle.addEventListener('click', () => {
+        if (document.body.classList.contains('dark-mode')) {
+            document.body.classList.replace('dark-mode', 'light-mode');
+            localStorage.setItem('mode', 'light');
+            modeToggle.textContent = '☀️';
+        } else {
+            document.body.classList.replace('light-mode', 'dark-mode');
+            localStorage.setItem('mode', 'dark');
+            modeToggle.textContent = '🌓';
+        }
+    });
+
     // Typing effect for header
     const headerTitle = document.querySelector('header h1');
     if (headerTitle) {

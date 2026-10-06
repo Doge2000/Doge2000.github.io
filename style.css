@@ -5,11 +5,45 @@
     box-sizing: border-box;
 }
 
+/* CSS Variables for Dark/Light Mode */
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --accent-color: #00bbff;
+    --white: #ffffff;
+    --black: #0a0a0a;
+    --header-bg: rgba(10, 10, 10, 0.9);
+    --section-bg: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(0, 187, 255, 0.2);
+    --hover-bg: rgba(255, 255, 255, 0.15);
+    --skill-bar-bg: rgba(255, 255, 255, 0.1);
+    --footer-bg: rgba(255, 255, 255, 0.05);
+    --footer-border: rgba(0, 187, 255, 0.2);
+    --footer-text: #e0e0e0;
+    --button-text: #0a0a0a;
+}
+
+body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #0a0a0a;
+    --accent-color: #00bbff;
+    --white: #0a0a0a;
+    --black: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.9);
+    --section-bg: rgba(0, 0, 0, 0.05);
+    --border-color: rgba(0, 187, 255, 0.2);
+    --hover-bg: rgba(0, 0, 0, 0.15);
+    --skill-bar-bg: rgba(0, 0, 0, 0.1);
+    --footer-bg: rgba(0, 0, 0, 0.05);
+    --footer-border: rgba(0, 187, 255, 0.2);
+    --button-text: #ffffff;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #e0e0e0;
-    background-color: #0a0a0a;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -27,9 +61,9 @@ body {
 }
 
 header {
-    background-color: rgba(10, 10, 10, 0.9);
+    background-color: var(--header-bg);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0, 187, 255, 0.2);
+    border-bottom: 1px solid var(--border-color);
     padding: 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
@@ -49,7 +83,7 @@ header h1 {
     font-size: 2.8rem;
     margin-bottom: 0.5rem;
     letter-spacing: -0.5px;
-    background: linear-gradient(to right, #ffffff, #00bbff);
+    background: linear-gradient(to right, var(--white), var(--accent-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -64,7 +98,7 @@ nav ul {
 }
 
 nav a {
-    color: #ffffff; /* White text */
+    color: var(--text-color); /* White text */
     text-decoration: none;
     font-weight: 500;
     transition: all 0.4s ease;
@@ -102,7 +136,7 @@ nav a:hover::before {
 }
 
 nav a:hover {
-    color: #00bbff; /* Bright blue accent */
+    color: var(--accent-color); /* Bright blue accent */
 }
 
 nav a::after {
@@ -124,13 +158,14 @@ section {
     padding: 4rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--section-bg);
 }
 
 section h2 {
     font-size: 2.2rem;
     margin-bottom: 2rem;
     text-align: center;
-    color: #ffffff;
+    color: var(--text-color);
     position: relative;
     display: inline-block;
     padding-bottom: 0.5rem;
@@ -144,19 +179,19 @@ section h2::after {
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(to right, #ffffff, #00bbff);
+    background: linear-gradient(to right, var(--white), var(--accent-color));
 }
 
 /* About section styling */
 #about {
     text-align: center;
     padding: 4rem 2rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--section-bg);
     border-radius: 20px;
     margin: 2rem auto;
     max-width: 900px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 187, 255, 0.1);
+    border: 1px solid var(--border-color);
 }
 
 .about-content {
@@ -232,7 +267,7 @@ section h2::after {
 .skill-bar {
     width: 100%;
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--skill-bar-bg);
     border-radius: 4px;
     overflow: hidden;
     position: relative;
@@ -240,7 +275,7 @@ section h2::after {
 
 .skill-progress {
     height: 100%;
-    background: linear-gradient(to right, #ffffff, #00bbff);
+    background: linear-gradient(to right, var(--white), var(--accent-color));
     width: 0%;
     transition: width 2s ease;
     border-radius: 4px;
@@ -248,7 +283,7 @@ section h2::after {
 
 .skill-percentage {
     font-weight: 600;
-    color: #ffffff;
+    color: var(--white);
     font-size: 0.9rem;
     align-self: flex-end;
 }
@@ -263,11 +298,11 @@ section h2::after {
 
 .project,
 .project-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--section-bg);
     border-radius: 16px;
     padding: 2rem;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 187, 255, 0.1);
+    border: 1px solid var(--border-color);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -275,11 +310,11 @@ section h2::after {
 }
 
 .experience-card {
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--section-bg);
     border-radius: 16px;
     padding: 2rem;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 187, 255, 0.1);
+    border: 1px solid var(--border-color);
     transition: all 0.4s ease;
     position: relative;
     overflow: hidden;
@@ -303,7 +338,7 @@ section h2::after {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, #ffffff, #00bbff);
+    background: linear-gradient(to bottom, var(--white), var(--accent-color));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -317,13 +352,13 @@ section h2::after {
 }
 
 .experience-tech span {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background-color: var(--skill-bar-bg);
+    color: var(--white);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(0, 187, 255, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 /* Experience layout styles */
@@ -388,17 +423,18 @@ section h2::after {
 .experience-header h3 {
     margin: 0;
     font-size: 1.5rem;
+    color: var(--text-color);
 }
 
 .experience-date {
     font-size: 0.9rem;
-    color: #00bbff;
+    color: var(--accent-color);
     font-weight: 500;
 }
 
 .company-name {
     font-weight: 600;
-    color: #ffffff;
+    color: var(--text-color);
     margin: 0.5rem 0;
     font-size: 1.1rem;
 }
@@ -406,7 +442,7 @@ section h2::after {
 .experience-description {
     margin: 1rem 0;
     line-height: 1.6;
-    color: #e0e0e0;
+    color: var(--text-color);
 }
 
 .experience-tech {
@@ -417,13 +453,13 @@ section h2::after {
 }
 
 .experience-tech span {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background-color: var(--skill-bar-bg);
+    color: var(--white);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(0, 187, 255, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 .project:hover,
@@ -446,7 +482,7 @@ section h2::after {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, #ffffff, #00bbff);
+    background: linear-gradient(to bottom, var(--white), var(--accent-color));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -458,7 +494,7 @@ section h2::after {
     left: 0;
     width: 4px;
     height: 100%;
-    background: linear-gradient(to bottom, #ffffff, #00bbff);
+    background: linear-gradient(to bottom, var(--white), var(--accent-color));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -479,7 +515,7 @@ section h2::after {
 
 .project h3,
 .project-card h3 {
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 1.25rem;
     font-size: 1.75rem;
     display: flex;
@@ -494,11 +530,11 @@ section h2::after {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, #ffffff, #00bbff);
+    background: linear-gradient(to bottom, var(--white), var(--accent-color));
 }
 
 .project p {
-    color: #e0e0e0;
+    color: var(--text-color);
     line-height: 1.7;
     font-size: 1.05rem;
     margin-bottom: 1.5rem;
@@ -513,18 +549,18 @@ section h2::after {
 }
 
 .project-tech span {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    background-color: var(--skill-bar-bg);
+    color: var(--white);
     padding: 0.25rem 0.75rem;
     border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid rgba(0, 187, 255, 0.2);
+    border: 1px solid var(--border-color);
 }
 
 /* Specific project card styles */
 .project-condition-grid {
-    border: 2px solid rgba(0, 187, 255, 0.2);
+    border: 2px solid var(--border-color);
 }
 
 .project-condition-grid:hover {
@@ -533,7 +569,7 @@ section h2::after {
 }
 
 .project-works-wheel {
-    border: 2px solid rgba(0, 187, 255, 0.2);
+    border: 2px solid var(--border-color);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 187, 255, 0.1) 100%);
 }
 
@@ -544,7 +580,7 @@ section h2::after {
 
 .project-notched-card {
     position: relative;
-    border: 2px solid rgba(0, 187, 255, 0.2);
+    border: 2px solid var(--border-color);
 }
 
 .project-notched-card::before {
@@ -554,7 +590,7 @@ section h2::after {
     left: 20px;
     width: 30px;
     height: 4px;
-    background: linear-gradient(to right, #ffffff, #00bbff);
+    background: linear-gradient(to right, var(--white), var(--accent-color));
 }
 
 .project-notched-card::after {
@@ -564,7 +600,7 @@ section h2::after {
     right: 20px;
     width: 30px;
     height: 4px;
-    background: linear-gradient(to left, #ffffff, #00bbff);
+    background: linear-gradient(to left, var(--white), var(--accent-color));
 }
 
 .project-notched-card:hover {
@@ -575,11 +611,11 @@ section h2::after {
 /* Contact section styling */
 #contact {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--section-bg);
     border-radius: 20px;
     padding: 2.5rem;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 187, 255, 0.1);
+    border: 1px solid var(--border-color);
     margin: 2rem auto;
     max-width: 600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -596,11 +632,11 @@ section h2::after {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--section-bg);
     padding: 1rem 1.5rem;
     border-radius: 12px;
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 187, 255, 0.1);
+    border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     width: 100%;
     max-width: 500px;
@@ -608,7 +644,7 @@ section h2::after {
 }
 
 .contact-item:hover {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: var(--hover-bg);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 187, 255, 0.2);
 }
@@ -620,7 +656,7 @@ section h2::after {
 }
 
 .contact-item a {
-    color: #ffffff;
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
@@ -630,7 +666,7 @@ section h2::after {
 }
 
 .contact-item a:hover {
-    color: #00bbff;
+    color: var(--accent-color);
     transform: translateX(5px);
 }
 
@@ -649,20 +685,20 @@ section h2::after {
 footer {
     text-align: center;
     padding: 2.5rem;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--footer-bg);
     font-size: 0.95rem;
     opacity: 0.8;
-    border-top: 1px solid rgba(0, 187, 255, 0.2);
+    border-top: 1px solid var(--footer-border);
     margin-top: 3rem;
-    color: #e0e0e0;
+    color: var(--footer-text);
 }
 
 /* Button styles */
 .github-btn {
     display: inline-block;
     padding: 0.875rem 1.75rem;
-    background: linear-gradient(135deg, #ffffff, #00bbff);
-    color: #0a0a0a;
+    background: linear-gradient(135deg, var(--white), var(--accent-color));
+    color: var(--button-text);
     text-decoration: none;
     border-radius: 16px;
     font-weight: 600;
@@ -684,7 +720,7 @@ footer {
 }
 
 .github-btn:hover {
-    background: linear-gradient(135deg, #00bbff, #ffffff);
+    background: linear-gradient(135deg, var(--accent-color), var(--white));
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 12px 25px rgba(0, 187, 255, 0.4);
     border-bottom: 4px solid rgba(0, 0, 0, 0.3);
@@ -705,7 +741,7 @@ footer {
     opacity: 0;
     transition: all 0.4s ease;
     font-weight: bold;
-    color: #0a0a0a;
+    color: var(--button-text);
 }
 
 .github-btn:hover::before {
