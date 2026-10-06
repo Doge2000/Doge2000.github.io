@@ -10,24 +10,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Dark/Light mode toggle
-    const modeToggle = document.getElementById('mode-toggle');
+    // Dark/Light mode toggle (slider)
+    const modeToggleSlider = document.getElementById('mode-toggle-slider');
     // Check for saved mode preference or default to dark
-    const currentMode = localStorage.getItem('mode') || 'dark';
+    let currentMode = 'dark';
+    try {
+        currentMode = localStorage.getItem('mode') === 'light' ? 'light' : 'dark';
+    } catch (error) {
+        // Restricted browser contexts may not allow localStorage access.
+    }
     document.body.classList.add(currentMode + '-mode');
-    // Update the button icon based on mode
-    modeToggle.textContent = currentMode === 'dark' ? '🌓' : '☀️';
+    // Set slider position based on mode
+    modeToggleSlider.checked = currentMode === 'light';
 
-    // Add click event listener
-    modeToggle.addEventListener('click', () => {
-        if (document.body.classList.contains('dark-mode')) {
+    // Add change event listener
+    modeToggleSlider.addEventListener('change', () => {
+        if (modeToggleSlider.checked) {
             document.body.classList.replace('dark-mode', 'light-mode');
             localStorage.setItem('mode', 'light');
-            modeToggle.textContent = '☀️';
         } else {
             document.body.classList.replace('light-mode', 'dark-mode');
             localStorage.setItem('mode', 'dark');
-            modeToggle.textContent = '🌓';
         }
     });
 

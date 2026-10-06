@@ -5,6 +5,74 @@
     box-sizing: border-box;
 }
 
+/* Dark/Light Mode Slider Toggle */
+.mode-toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+.mode-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.mode-toggle input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-color);
+    transition: .4s;
+    border-radius: 34px;
+    border: 2px solid var(--border-color);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--text-color);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--accent-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--accent-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Fix for readable text in both modes */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
 /* CSS Variables for Dark/Light Mode */
 :root {
     --bg-color: #0a0a0a;
@@ -36,7 +104,8 @@ body.light-mode {
     --skill-bar-bg: rgba(0, 0, 0, 0.1);
     --footer-bg: rgba(0, 0, 0, 0.05);
     --footer-border: rgba(0, 187, 255, 0.2);
-    --button-text: #ffffff;
+    --footer-text: #0a0a0a;
+    --button-text: #0a0a0a;
 }
 
 body {
@@ -52,7 +121,7 @@ body {
 h1, h2, h3 {
     font-weight: 600;
     line-height: 1.2;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 body {
@@ -146,7 +215,7 @@ nav a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(to right, #ffffff, #00bbff);
+    background: linear-gradient(to right, var(--white), var(--accent-color));
     transition: width 0.3s ease;
 }
 
@@ -221,7 +290,7 @@ section h2::after {
 .about-text {
     text-align: center;
     max-width: 600px;
-    color: #e0e0e0;
+    color: var(--text-color);
 }
 
 #about p {
@@ -231,7 +300,7 @@ section h2::after {
     line-height: 1.8;
     opacity: 0.9;
     font-size: 1.1rem;
-    color: #e0e0e0;
+    color: var(--text-color);
 }
 
 /* Skills Section Styling */
@@ -242,7 +311,7 @@ section h2::after {
 }
 
 .skills-container h3 {
-    color: #ffffff;
+    color: var(--text-color);
     text-align: center;
     margin-bottom: 1.5rem;
 }
