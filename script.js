@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     } catch (error) {
         // Restricted browser contexts may not allow localStorage access.
     }
+    function saveModePreference(mode) {
+        try {
+            localStorage.setItem('mode', mode);
+        } catch (error) {
+            // The mode still changes for this page if storage is unavailable.
+        }
+    }
     document.body.classList.add(currentMode + '-mode');
     // Set slider position based on mode
     modeToggleSlider.checked = currentMode === 'light';
@@ -27,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     modeToggleSlider.addEventListener('change', () => {
         if (modeToggleSlider.checked) {
             document.body.classList.replace('dark-mode', 'light-mode');
-            localStorage.setItem('mode', 'light');
+            saveModePreference('light');
         } else {
             document.body.classList.replace('light-mode', 'dark-mode');
-            localStorage.setItem('mode', 'dark');
+            saveModePreference('dark');
         }
     });
 
