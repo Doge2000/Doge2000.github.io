@@ -217,3 +217,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Make profile picture follow mouse gently
+const profileImg = document.querySelector('.profile-img');
+if (profileImg) {
+    let floatOffset = 0;
+    let floatDirection = 1;
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMouseOver = false;
+
+    // Set up mouse tracking
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Check if mouse is over profile image
+    profileImg.addEventListener('mouseenter', () => {
+        isMouseOver = true;
+    });
+
+    profileImg.addEventListener('mouseleave', () => {
+        isMouseOver = false;
+    });
+
+    function floatAndFollowImage() {
+        // Gentle floating animation
+        floatOffset += floatDirection * 0.5;
+        if (Math.abs(floatOffset) > 10) floatDirection *= -1;
+
+        // Calculate mouse-based offset (only when mouse is over image or nearby)
+        let moveX = 0;
+        let moveY = 0;
+
+        if (isMouseOver) {
+            // Get profile image position and size
+            const imgRect = profileImg.getBoundingClientRect();
+            const centerX = imgRect.left + imgRect.width / 2;
+            const centerY = imgRect.top + imgRect.height / 2;
+
+            // Calculate distance from center (normalized to -1 to 1 range)
+            const dx = (mouseX - centerX) / (imgRect.width / 2);
+            const dy = (mouseY - centerY) / (imgRect.height / 2);
+
+            // Apply gentle movement (max 10px offset)
+            moveX = dx * 5;  // Reduce sensitivity
+            moveY = dy * 5;  // Reduce sensitivity
+        }
+
+        // Combine floating and mouse-following effects
+        const totalOffsetY = floatOffset + moveY;
+        const totalOffsetX = moveX;
+
+        profileImg.style.transform = `translate(${totalOffsetX}px, ${totalOffsetY}px)`;
+
+        requestAnimationFrame(floatAndFollowImage);
+    }
+
+    floatAndFollowImage();
+}
