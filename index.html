@@ -3,14 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
     <title>Jade Chen's Portfolio - About</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Portfolio of Jade Chen - Aerospace Engineering student at UT Austin with passion for software development and engineering projects">
+    <meta name="keywords" content="Jade Chen, aerospace engineering, software developer, portfolio, UT Austin, model rocket simulation, LSTM prediction, web development">
+    <meta name="author" content="Jade Chen">
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="Jade Chen's Portfolio">
+    <meta property="og:description" content="Aerospace Engineering student at UT Austin showcasing engineering and software development projects">
+    <meta property="og:image" content="assets/Profile.jpg">
+    <meta property="og:url" content="https://doge2000.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jade Chen",
+      "url": "https://doge2000.github.io/",
+      "sameAs": [
+        "https://github.com/Doge2000",
+        "https://www.linkedin.com/in/jlchen-tx"
+      ],
+      "jobTitle": "Aerospace Engineering Student",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "University of Texas at Austin"
+      },
+      "description": "Aerospace Engineering student at UT Austin with passion for software development and engineering projects.",
+      "image": "assets/Profile.jpg"
+    }
+    </script>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Add skip link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <h1>Jade Chen</h1>
-        <nav>
+        <nav aria-label="Primary navigation">
             <ul>
                 <li><a href="index.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -18,27 +52,34 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
-        <div class="mode-toggle-container">
+        <div class="mode-toggle-container" aria-label="Theme toggle">
             <label class="mode-toggle">
-                <input type="checkbox" id="mode-toggle-slider">
+                <input type="checkbox" id="mode-toggle-slider" aria-label="Toggle dark/light mode">
                 <span class="slider"></span>
                 <span class="mode-toggle-label">Theme</span>
             </label>
         </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <img src="assets/Profile.jpg" alt="Jade Chen" class="profile-img">
-            <div class="about-text">
-                <p>Hello! I am currently an Aerospace Engineering student at the University of Texas at Austin. Over the last few years, I have merged my passion for aerospace with a strong interest in software development. In the future, I aim to continue contributing to various hands-on projects that bridge the gap between engineering and technology.</p>
+    <main id="main-content">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <img src="assets/Profile.jpg" alt="Jade Chen" class="profile-img">
+                <div class="about-text">
+                    <p>Hello! I am currently an Aerospace Engineering student at the University of Texas at Austin. Over the last few years, I have merged my passion for aerospace with a strong interest in software development. In the future, I aim to continue contributing to various hands-on projects that bridge the gap between engineering and technology.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Jade Chen. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/Doge2000" target="_blank" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/jlchen-tx" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+            <a href="mailto:astrojade2016@gmail.com" aria-label="Email">Email</a>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>

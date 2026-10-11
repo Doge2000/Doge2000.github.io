@@ -5,6 +5,32 @@
     box-sizing: border-box;
 }
 
+/* Focus styles enhancement for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Skip link styling */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    padding: 8px;
+    z-index: 1000;
+    transition: top 0.3s ease;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 0;
+    opacity: 1;
+}
+
 /* Dark/Light Mode Slider Toggle */
 .mode-toggle-container {
     display: flex;
@@ -184,6 +210,22 @@ nav ul {
     list-style: none;
     gap: 2.5rem;
     flex-wrap: wrap;
+}
+
+/* Ensure minimum touch target size for navigation items */
+nav li {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Enhanced focus states for navigation links */
+nav a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    background-color: var(--hover-bg);
 }
 
 nav a {
@@ -396,6 +438,8 @@ section h2::after {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Ensure minimum touch target size for cards */
+    min-height: 44px;
 }
 
 .experience-card {
@@ -408,6 +452,8 @@ section h2::after {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* Ensure minimum touch target size for cards */
+    min-height: 44px;
 }
 
 .experience-card:hover {
@@ -730,6 +776,8 @@ section h2::after {
     width: 100%;
     max-width: 500px;
     justify-content: center;
+    /* Ensure minimum touch target size */
+    min-height: 44px;
 }
 
 .contact-item:hover {
@@ -782,6 +830,10 @@ footer {
     color: var(--footer-text);
 }
 
+footer p {
+    margin-bottom: 1.5rem;
+}
+
 /* Button styles */
 .github-btn {
     display: inline-block;
@@ -806,6 +858,12 @@ footer {
     border-bottom: 4px solid rgba(0, 0, 0, 0.2);
     font-family: inherit;
     touch-action: manipulation;
+    /* Ensure minimum touch target size */
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body.light-mode .github-btn {
@@ -871,6 +929,69 @@ body.light-mode .github-btn:hover {
 .github-btn:focus-visible {
     outline: 2px solid rgba(0, 128, 128, 0.5);
     outline-offset: 2px;
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    /* Disable specific animations that might still cause issues */
+    .particle {
+        animation: none !important;
+    }
+
+    /* Keep essential transitions but make them instant */
+    .skill-progress {
+        transition: none !important;
+    }
+
+    /* Still provide feedback but without motion */
+    .github-btn:hover {
+        transform: none !important;
+    }
+
+    .project:hover,
+    .project-card:hover,
+    .experience-card:hover {
+        transform: none !important;
+    }
+}
+
+/* Social links in footer */
+.social-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid transparent;
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+    background-color: var(--hover-bg);
+    border-color: var(--border-color);
+    transform: translateY(-2px);
+}
+
+.social-links a:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    background-color: var(--hover-bg);
 }
 
 .experience-grid {
